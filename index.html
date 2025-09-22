@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Delivery App — Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <header>
+    <h1>Delivery Demo</h1>
+    <nav>
+      <button id="tab-customer" class="tab-btn active">Customer</button>
+      <button id="tab-restaurant" class="tab-btn">Restaurant</button>
+      <button id="tab-driver" class="tab-btn">Driver</button>
+      <button id="tab-admin" class="tab-btn">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Customer Panel -->
+    <section id="customer-panel" class="panel">
+      <h2>Customer</h2>
+      <div class="card">
+        <h3>Register / Login</h3>
+        <input id="cust-email" placeholder="Email">
+        <input id="cust-password" type="password" placeholder="Password">
+        <input id="cust-name" placeholder="Name">
+        <button id="cust-register">Register</button>
+        <button id="cust-login">Login</button>
+      </div>
+
+      <div class="card">
+        <h3>Set your location</h3>
+        <button id="cust-use-geoloc">Use my location</button>
+        <div id="cust-loc">Not set</div>
+      </div>
+
+      <div class="card">
+        <h3>Restaurants</h3>
+        <div id="restaurants-list"></div>
+      </div>
+
+      <div class="card">
+        <h3>Map (Live tracking after order)</h3>
+        <div id="map" style="height:400px"></div>
+      </div>
+    </section>
+
+    <!-- Restaurant Panel -->
+    <section id="restaurant-panel" class="panel hidden">
+      <h2>Restaurant</h2>
+      <div class="card">
+        <h3>Register / Login</h3>
+        <input id="rest-email" placeholder="Email">
+        <input id="rest-password" type="password" placeholder="Password">
+        <input id="rest-name" placeholder="Restaurant Name">
+        <button id="rest-register">Register</button>
+        <button id="rest-login">Login</button>
+      </div>
+
+      <div class="card">
+        <h3>Add menu item</h3>
+        <input id="menu-title" placeholder="Title">
+        <input id="menu-price" placeholder="Price" type="number">
+        <input id="menu-img" placeholder="Image URL">
+        <button id="add-menu-item">Add Menu Item</button>
+      </div>
+
+      <div class="card">
+        <h3>Pending Orders</h3>
+        <div id="rest-orders"></div>
+      </div>
+    </section>
+
+    <!-- Driver Panel -->
+    <section id="driver-panel" class="panel hidden">
+      <h2>Driver</h2>
+      <div class="card">
+        <h3>Register / Login</h3>
+        <input id="drv-email" placeholder="Email">
+        <input id="drv-password" type="password" placeholder="Password">
+        <input id="drv-name" placeholder="Driver Name">
+        <button id="drv-register">Register</button>
+        <button id="drv-login">Login</button>
+      </div>
+
+      <div class="card">
+        <h3>Driver Controls</h3>
+        <button id="start-sharing">Start sharing location</button>
+        <button id="stop-sharing">Stop sharing</button>
+        <div id="drv-current">Not sharing</div>
+      </div>
+
+      <div class="card">
+        <h3>Nearby Requests</h3>
+        <div id="drv-requests"></div>
+      </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <section id="admin-panel" class="panel hidden">
+      <h2>Admin</h2>
+      <div class="card">
+        <h3>Overview</h3>
+        <button id="admin-refresh">Refresh</button>
+        <div id="admin-data"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Firebase and App script -->
+  <!-- Load Google Maps (replace YOUR_GOOGLE_MAPS_API_KEY) -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+
+  <!-- Firebase SDKs (modular) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
